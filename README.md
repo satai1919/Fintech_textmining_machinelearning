@@ -9,3 +9,5 @@ homework1 for the course "fintech-MLandTM"
 3. 教學檔案 jupyter
     1. 5個可能發生的錯誤情況
 4. 績效
+
+HIHIHIHIHIHI
