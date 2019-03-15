@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import requests
+from getpass import getpass
 from lxml import html
 import json
 import urllib3
@@ -9,8 +10,8 @@ import time
 def login():
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     
-    email = "satai1919@gmail.com"
-    pas = "FintechMl"
+    email = input("email: ") #satai1919@gmail.com
+    pas = getpass("password: ") #FintechMl
     LOGIN_URL = "https://ycharts.com/login"
     
     session = requests.session()
