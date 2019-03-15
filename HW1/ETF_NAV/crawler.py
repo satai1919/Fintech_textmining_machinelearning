@@ -28,12 +28,13 @@ a = inputfile.readline()
 email = input("Enter your account: ")
 pas = getpass("Enter your password: ")
 
+session = login_website.login(email,pas)
+
 # 34 etfs
 for i in range(34):
     a = inputfile.readline()
     a = a.split(",")
 
-    session = login_website.login(email,pas)
     df_list = []
     nav_dict=dict()
     #{'2018 Dec.':[31,123.54]} (key是字串，value是list[day,nat])
