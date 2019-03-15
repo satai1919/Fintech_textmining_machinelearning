@@ -4,6 +4,7 @@ import time
 import pandas as pd
 import re
 import csv
+import getpass
 from bs4 import BeautifulSoup
 
 filename = "ETF List Filtered.csv"
@@ -24,13 +25,15 @@ a = inputfile.readline()
 ##print(a[-1])
 #output.write(""+a[0]+", "+a[-1]+"")
 ##output.close()
+email = input("Enter your account: ")
+pas = getpass.getpass("Enter your password: ")
 
 # 34 etfs
 for i in range(34):
     a = inputfile.readline()
     a = a.split(",")
 
-    session = login_website.login()
+    session = login_website.login(email,pas)
     df_list = []
     nav_dict=dict()
     #{'2018 Dec.':[31,123.54]} (key是字串，value是list[day,nat])

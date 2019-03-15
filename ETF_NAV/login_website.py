@@ -5,26 +5,23 @@ import json
 import urllib3
 import time
 
-
-def login():
+def login(email,pas):
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-    
-    email = "satai1919@gmail.com"
-    pas = "FintechMl"
+
     LOGIN_URL = "https://ycharts.com/login"
-    
+
     session = requests.session()
-    
+
     result = session.get(LOGIN_URL)
     tree = html.fromstring(result.text)
     authenticity_token = list(set(tree.xpath('//input[@name="csrfmiddlewaretoken"]/@value')))[0]
-    
+
     payload = {
         'username': email,
         'password': pas,
         'csrfmiddlewaretoken': authenticity_token
     }
-    
+
     headers = {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
         'Accept-Encoding': 'gzip, deflate, br',
@@ -39,8 +36,8 @@ def login():
         'Referer': 'https://ycharts.com/login',
         'Upgrade-Insecure-Requests': '1',
     }
-    
+
     r = session.post("https://ycharts.com/login", data=payload, headers = headers, verify=False)
-    
+
     r.status_code
     return session
