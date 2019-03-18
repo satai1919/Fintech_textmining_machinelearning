@@ -68,6 +68,10 @@ in_file =  open( path , 'r')
 csv_reader = csv.DictReader(in_file)
 
 
+
+## 確保資料夾位置
+location = input('You have to first change your download path to a new folder without any other files existing, and enter the path:')
+
 import pandas as pd
 import time
 for a_row in csv_reader:
@@ -84,7 +88,7 @@ for a_row in csv_reader:
     elif company_name == 'ProShares': ##如果基金公司是ProShares，可直接用網址加代號取得CSV檔案  
         url = 'https://accounts.profunds.com/etfdata/ByFund/' + symbol +'-historical_nav.csv'
         df = pd.read_csv(url)
-        df.to_csv( 'C:\\Users\\User\\Downloads\\%s.csv' %symbol)
+        df.to_csv( location + '\%s.csv' %symbol)
         
     elif company_name == 'WisdomTree': ##如果基金公司是WisdomTree，得先進去一個網址後用beautifulsoup以及pandas來處理網站表格
         homepage = 'https://www.wisdomtree.com/etfs/currency/'+ symbol.lower()
@@ -96,7 +100,7 @@ for a_row in csv_reader:
 
         r = requests.get(table_html)
         html_df = pd.read_html(r.text)
-        html_df[0].to_csv( 'C:\\Users\\User\\Downloads\\%s.csv' %symbol)
+        html_df[0].to_csv( location + '\%s.csv' %symbol)
     elif company_name == 'SPDR': ##如果基金公司是SPDR，得先進去一個網址後用beautifulsoup以及pandas來處理網站表格
         driver.get('https://us.spdrs.com/site-content/xls/PSK_HistoricalNav.xls?fund=' + symbol)
         
@@ -114,7 +118,7 @@ for a_row in csv_reader:
 import os
 import glob
 
-path = r'C:\Users\User\data'	#the path where you put your downloaded files
+path = location	#the path where you put your downloaded files
 extension1 = 'csv'
 extension2 = 'xls'
 os.chdir(path)
