@@ -1,18 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait,Select
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
-from bs4 import BeautifulSoup as bs
-import requests
 import time
 import pandas as pd
 url="https://www.census.gov/econ/currentdata" #all the history data can be got from here
-#set default download path
-chromeOptions=webdriver.ChromeOptions()
-prefs={"download.default_directory":"./data"}
-chromeOptions.add_experimental_option(name="prefs",value=prefs)
-driver=webdriver.Chrome(chrome_options=chromeOptions)
+driver=webdriver.Chrome()
 wait=WebDriverWait(driver,10)
 driver.get(url)
 #select manufacturers' shipments, inventories, and orders
