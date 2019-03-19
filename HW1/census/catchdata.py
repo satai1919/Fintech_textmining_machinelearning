@@ -26,7 +26,6 @@ driver.find_element(By.XPATH,"//input[@type='submit']").click()
 url=driver.current_url
 value=pd.read_html(url)[0]
 iniy=value.iloc[0,0]
-print(iniy)
 value=value.drop(labels='Year',axis=1)
 value=value.values
 value=value.flatten("C")
