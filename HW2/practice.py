@@ -6,7 +6,8 @@ import pickle
 import time	#用來記錄所花時間
 import multiprocessing as mp	#用來多進程
 import pandas as pd
-
+import sys
+sys.setrecursionlimit(10000)
 #define functions
 
 def crawl(url):
