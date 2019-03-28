@@ -104,11 +104,11 @@ if __name__ == "__main__":
 	loop.run_until_complete(main(loop,all_data))
 	loop.close()
 	
-	
-	print('Total time consumed is %s seconds' %( time.time()-t1 )	)	
+		print('Total time consumed is %s seconds' %( time.time()-t1 )	)	
+
 
 	
 	#pandas
 		
 	table = pd.DataFrame(all_data)[['基金id', '基金名稱', '計價幣別', '基金公司/總代理人', '成立時間', '基金規模', '投資策略']]
-	table.to_csv(r'C:\Users\User\pf\funds_info.csv', encoding = 'utf-8-sig' )
+	table.to_csv(r'C:\Users\User\pf\funds_info1.csv', encoding = 'utf-8-sig' )
