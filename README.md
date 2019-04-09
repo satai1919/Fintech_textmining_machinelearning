@@ -9,3 +9,12 @@
 1. 完成ETF_NAV爬蟲
 2. 完成經濟指標爬蟲\
 皆使用jupyter呈現
+
+
+## HW 2
+
+4/10 by d768092:
+新增使用jieba套件取詞的code和得出的單詞data(tf_idf2)\
+新增手動標記單詞(set_type.py)，要自行標記約600個單詞的種類，可以直接改wordtype.csv或玩一下我那個程式(?)\
+新增標記程式\
+以上皆用python3執行
