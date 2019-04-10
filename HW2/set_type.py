@@ -14,10 +14,10 @@ except:
     for word in words:
         wordtype[word]=''
 
-types = {'LOC','IND','STY'} #set for valid type
+types = {'LOC','TYP','STY'} #set for valid type
 '''
 LOC: location
-IND: industry
+TYP: type
 STY: style
 '''
 start=input('start word (default first word):')
@@ -52,7 +52,7 @@ for word in words:
             break
         else:
             print('error: please type one of the following:')
-            t=input('"LOC","IND","STY",or just press enter:')
+            t=input('"LOC","TYP","STY",or just press enter:')
 with open('wordtype.csv','w') as output:
     writer=csv.writer(output)
     writer.writerow(['單詞','種類'])
