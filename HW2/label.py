@@ -37,7 +37,24 @@ trainfile.close()
 
 testfilename = 'test_data'
 testfile = open(testfilename, 'w')
+
 for article in content[1500:]:
-    testfile.write(article)
-    testfile.write('\n')
+    article=str(article)
+    l = len(article)
+    now = 0
+    while now<l:
+        labeled=False
+        for key in wordtype.keys():
+            lkey = len(key)
+            if now+lkey<=l:
+                if article[now:now+lkey]==key:
+                    labeled=True
+                    testfile.write(article[now]+'\t'+'B-'+wordtype[key]+'\n')
+                    for i in range(1,lkey):
+                        testfile.write(article[now+i]+'\t'+'I-'+wordtype[key]+'\n')
+                    now += lkey
+                    break
+        if not labeled:
+            testfile.write(article[now]+'\t'+'O'+'\n')
+            now += 1
 testfile.close()         
