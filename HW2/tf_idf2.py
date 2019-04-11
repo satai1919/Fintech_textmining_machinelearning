@@ -49,12 +49,12 @@ def main(path):
 		
 		
     #把n gram對應的dictionary中TF低於50的給排除掉
-    for value,key in sorted(zip(dict_of_tf_dict.values(), dict_of_tf_dict.keys())):
-        if value < 50:
-            dict_of_df_dict.pop(key)
-            dict_of_tf_dict.pop(key)
-        else:
-            break
+    # for value,key in sorted(zip(dict_of_tf_dict.values(), dict_of_tf_dict.keys())):
+        # if value < 50:
+            # dict_of_df_dict.pop(key)
+            # dict_of_tf_dict.pop(key)
+        # else:
+            # break
 		
 if __name__ == '__main__' :
 	import time
@@ -63,7 +63,7 @@ if __name__ == '__main__' :
 	print('time spent is:', time.time()-t1 ) #time spent is: 549.5456
 
 	import csv #寫入檔案
-	with open('tf_idf2.csv', 'w',newline='',) as file1:
+	with open('tf_idf2.csv', 'w',newline='', encoding = 'utf-8') as file1:
 		csv_writer = csv.writer(file1)
 		csv_writer.writerow(['單詞', 'TF', 'DF'])
 		for value,key in sorted(zip(dict_of_tf_dict.values(), dict_of_tf_dict.keys()), reverse=True):

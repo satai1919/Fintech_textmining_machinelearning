@@ -53,7 +53,7 @@ for word in words:
         else:
             print('error: please type one of the following:')
             t=input('"LOC","TYP","STY",or just press enter:')
-with open('wordtype.csv','w') as output:
+with open('wordtype.csv','w', encoding = 'utf-8', newline='') as output:
     writer=csv.writer(output)
     writer.writerow(['單詞','種類'])
     for word in words:
