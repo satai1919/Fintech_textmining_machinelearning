@@ -30,7 +30,7 @@ with open( r'from NER/data_path_save/1554975189/results/label_test', 'r') as fil
 		s = bytes_part.decode('utf-8')  # Decode the bytes to convert to a string	
 		
 		if tokens[1] == '0':
-			if not word_frag:
+			if not word_frag and word != '':
 				#print(word)
 				try:
 					tem_dict[word][0] +=1
@@ -49,21 +49,18 @@ with open( r'from NER/data_path_save/1554975189/results/label_test', 'r') as fil
 #print(df_list[0:5])		
 		
 df = pd.concat(df_list).fillna(0)
-'''
-f = pd.read_csv('funds_info.csv')
-fundname=f['基金id'].tolist()
-fundname=[ str(fundname[i]) for i in range(len(fundname)) if i%3==0 ]
-for i in range(len(fundname)):
-    df.rename(index={i:fundname[i]}, inplace=True)
-'''
-names=[ '基金'+str(i) for i in range(df.shape[0])]
+
+names=[ '句子'+str(i) for i in range(df.shape[0])]
 df.set_axis(names, axis='index', inplace=True)
 print(df)
-df.to_csv('TDM.csv')
+df.to_csv('TDM.csv', encoding = 'big5')
+
+#
 cov=df.values
-cov=cov.dot(np.transpose(cov))
-df2=pd.DataFrame(cov)
-for i in range(df2.shape[0]):
-    df2.rename(columns={i:'基金'+str(i)}, index={i:'基金'+str(i)}, inplace=True)
+cov_T = np.transpose(cov)
+co_occurence =cov_T.dot(cov)
+df2=pd.DataFrame(co_occurence)
+# for i in range(df2.shape[0]):
+    # df2.rename(columns={i:''+str(i)}, index={i:'句子'+str(i)}, inplace=True)
 print(df2)
-df2.to_csv('Co-occur.csv')
+df2.to_csv('Co-occur.csv', encoding = 'big5')
