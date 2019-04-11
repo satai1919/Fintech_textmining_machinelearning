@@ -1,0 +1,103 @@
+2019-04-11 14:13:09,171:INFO: Namespace(CRF=True, batch_size=64, clip=5.0, demo_model='1521112368', dropout=0.5, embedding_dim=300, epoch=10, hidden_dim=300, lr=0.001, mode='train', optimizer='Adam', pretrain_embedding='random', shuffle=True, test_data='data_path', train_data='data_path', update_embedding=True)
+2019-04-11 14:13:09,187:WARNING: From C:\Users\User\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow\python\framework\op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2019-04-11 14:13:09,187:WARNING: From C:\Users\User\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow\python\framework\op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2019-04-11 14:13:09,203:WARNING: From C:\Users\User\Documents\GitHub\HW1\HW2\from NER\model.py:60: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2019-04-11 14:13:09,203:WARNING: From C:\Users\User\Documents\GitHub\HW1\HW2\from NER\model.py:60: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2019-04-11 14:13:09,203:WARNING: From C:\Users\User\Documents\GitHub\HW1\HW2\from NER\model.py:64: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+2019-04-11 14:13:09,203:WARNING: From C:\Users\User\Documents\GitHub\HW1\HW2\from NER\model.py:64: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+2019-04-11 14:13:09,203:WARNING: From C:\Users\User\Documents\GitHub\HW1\HW2\from NER\model.py:71: bidirectional_dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell))`, which is equivalent to this API
+2019-04-11 14:13:09,203:WARNING: From C:\Users\User\Documents\GitHub\HW1\HW2\from NER\model.py:71: bidirectional_dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell))`, which is equivalent to this API
+2019-04-11 14:13:09,203:WARNING: From C:\Users\User\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow\python\ops\rnn.py:443: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+2019-04-11 14:13:09,203:WARNING: From C:\Users\User\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow\python\ops\rnn.py:443: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+2019-04-11 14:13:09,218:WARNING: From C:\Users\User\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow\python\ops\rnn.py:626: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-04-11 14:13:09,218:WARNING: From C:\Users\User\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow\python\ops\rnn.py:626: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-04-11 14:13:19,028:INFO: 2019-04-11 14:13:11 epoch 1, step 1, loss: 251.4, global_step: 1
+2019-04-11 14:13:19,028:INFO: 2019-04-11 14:13:11 epoch 1, step 1, loss: 251.4, global_step: 1
+2019-04-11 14:24:16,824:INFO: 2019-04-11 14:13:11 epoch 1, step 71, loss: 22.24, global_step: 71
+2019-04-11 14:24:16,824:INFO: 2019-04-11 14:13:11 epoch 1, step 71, loss: 22.24, global_step: 71
+2019-04-11 14:24:17,777:INFO: ===========validation / test===========
+2019-04-11 14:24:17,777:INFO: ===========validation / test===========
+2019-04-11 14:25:50,371:INFO: 2019-04-11 14:25:40 epoch 2, step 1, loss: 19.11, global_step: 72
+2019-04-11 14:25:50,371:INFO: 2019-04-11 14:25:40 epoch 2, step 1, loss: 19.11, global_step: 72
+2019-04-11 14:38:06,834:INFO: 2019-04-11 14:25:40 epoch 2, step 71, loss: 3.003, global_step: 142
+2019-04-11 14:38:06,834:INFO: 2019-04-11 14:25:40 epoch 2, step 71, loss: 3.003, global_step: 142
+2019-04-11 14:38:08,351:INFO: ===========validation / test===========
+2019-04-11 14:38:08,351:INFO: ===========validation / test===========
+2019-04-11 14:39:39,698:INFO: 2019-04-11 14:39:31 epoch 3, step 1, loss: 5.036, global_step: 143
+2019-04-11 14:39:39,698:INFO: 2019-04-11 14:39:31 epoch 3, step 1, loss: 5.036, global_step: 143
+2019-04-11 14:52:45,761:INFO: 2019-04-11 14:39:31 epoch 3, step 71, loss: 25.64, global_step: 213
+2019-04-11 14:52:45,761:INFO: 2019-04-11 14:39:31 epoch 3, step 71, loss: 25.64, global_step: 213
+2019-04-11 14:52:47,120:INFO: ===========validation / test===========
+2019-04-11 14:52:47,120:INFO: ===========validation / test===========
+2019-04-11 14:54:27,521:INFO: 2019-04-11 14:54:12 epoch 4, step 1, loss: 26.48, global_step: 214
+2019-04-11 14:54:27,521:INFO: 2019-04-11 14:54:12 epoch 4, step 1, loss: 26.48, global_step: 214
+2019-04-11 15:07:20,721:INFO: 2019-04-11 14:54:12 epoch 4, step 71, loss: 1.004, global_step: 284
+2019-04-11 15:07:20,721:INFO: 2019-04-11 14:54:12 epoch 4, step 71, loss: 1.004, global_step: 284
+2019-04-11 15:07:21,455:INFO: ===========validation / test===========
+2019-04-11 15:07:21,455:INFO: ===========validation / test===========
+2019-04-11 15:09:04,161:INFO: 2019-04-11 15:08:49 epoch 5, step 1, loss: 4.577, global_step: 285
+2019-04-11 15:09:04,161:INFO: 2019-04-11 15:08:49 epoch 5, step 1, loss: 4.577, global_step: 285
+2019-04-11 15:21:37,144:INFO: 2019-04-11 15:08:49 epoch 5, step 71, loss: 1.519, global_step: 355
+2019-04-11 15:21:37,144:INFO: 2019-04-11 15:08:49 epoch 5, step 71, loss: 1.519, global_step: 355
+2019-04-11 15:21:37,991:INFO: ===========validation / test===========
+2019-04-11 15:21:37,991:INFO: ===========validation / test===========
+2019-04-11 15:23:08,448:INFO: 2019-04-11 15:23:02 epoch 6, step 1, loss: 1.552, global_step: 356
+2019-04-11 15:23:08,448:INFO: 2019-04-11 15:23:02 epoch 6, step 1, loss: 1.552, global_step: 356
+2019-04-11 15:35:45,376:INFO: 2019-04-11 15:23:02 epoch 6, step 71, loss: 3.562, global_step: 426
+2019-04-11 15:35:45,376:INFO: 2019-04-11 15:23:02 epoch 6, step 71, loss: 3.562, global_step: 426
+2019-04-11 15:35:45,846:WARNING: From C:\Users\User\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow\python\training\saver.py:966: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+2019-04-11 15:35:45,846:WARNING: From C:\Users\User\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow\python\training\saver.py:966: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+2019-04-11 15:35:46,413:INFO: ===========validation / test===========
+2019-04-11 15:35:46,413:INFO: ===========validation / test===========
+2019-04-11 15:37:18,125:INFO: 2019-04-11 15:37:10 epoch 7, step 1, loss: 2.604, global_step: 427
+2019-04-11 15:37:18,125:INFO: 2019-04-11 15:37:10 epoch 7, step 1, loss: 2.604, global_step: 427
+2019-04-11 15:50:45,966:INFO: 2019-04-11 15:37:10 epoch 7, step 71, loss: 5.322, global_step: 497
+2019-04-11 15:50:45,966:INFO: 2019-04-11 15:37:10 epoch 7, step 71, loss: 5.322, global_step: 497
+2019-04-11 15:50:47,184:INFO: ===========validation / test===========
+2019-04-11 15:50:47,184:INFO: ===========validation / test===========
+2019-04-11 15:52:25,272:INFO: 2019-04-11 15:52:15 epoch 8, step 1, loss: 1.405, global_step: 498
+2019-04-11 15:52:25,272:INFO: 2019-04-11 15:52:15 epoch 8, step 1, loss: 1.405, global_step: 498
+2019-04-11 16:06:08,190:INFO: 2019-04-11 15:52:15 epoch 8, step 71, loss: 2.344, global_step: 568
+2019-04-11 16:06:08,190:INFO: 2019-04-11 15:52:15 epoch 8, step 71, loss: 2.344, global_step: 568
+2019-04-11 16:06:08,877:INFO: ===========validation / test===========
+2019-04-11 16:06:08,877:INFO: ===========validation / test===========
+2019-04-11 16:07:45,792:INFO: 2019-04-11 16:07:37 epoch 9, step 1, loss: 1.435, global_step: 569
+2019-04-11 16:07:45,792:INFO: 2019-04-11 16:07:37 epoch 9, step 1, loss: 1.435, global_step: 569
+2019-04-11 16:21:26,422:INFO: 2019-04-11 16:07:37 epoch 9, step 71, loss: 0.1841, global_step: 639
+2019-04-11 16:21:26,422:INFO: 2019-04-11 16:07:37 epoch 9, step 71, loss: 0.1841, global_step: 639
+2019-04-11 16:21:27,212:INFO: ===========validation / test===========
+2019-04-11 16:21:27,212:INFO: ===========validation / test===========
+2019-04-11 16:23:02,199:INFO: 2019-04-11 16:22:52 epoch 10, step 1, loss: 1.005, global_step: 640
+2019-04-11 16:23:02,199:INFO: 2019-04-11 16:22:52 epoch 10, step 1, loss: 1.005, global_step: 640
+2019-04-11 16:37:05,046:INFO: 2019-04-11 16:22:52 epoch 10, step 71, loss: 1.511, global_step: 710
+2019-04-11 16:37:05,046:INFO: 2019-04-11 16:22:52 epoch 10, step 71, loss: 1.511, global_step: 710
+2019-04-11 16:37:05,874:INFO: ===========validation / test===========
+2019-04-11 16:37:05,874:INFO: ===========validation / test===========

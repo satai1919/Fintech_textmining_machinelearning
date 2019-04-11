@@ -1,0 +1,203 @@
+2019-04-11 17:33:09,751:INFO: Namespace(CRF=True, batch_size=64, clip=5.0, demo_model='1521112368', dropout=0.5, embedding_dim=300, epoch=10, hidden_dim=300, lr=0.001, mode='train', optimizer='Adam', pretrain_embedding='random', shuffle=True, test_data='data_path', train_data='data_path', update_embedding=True)
+2019-04-11 17:33:09,767:WARNING: From C:\Users\User\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow\python\framework\op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2019-04-11 17:33:09,767:WARNING: From C:\Users\User\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow\python\framework\op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2019-04-11 17:33:09,783:WARNING: From C:\Users\User\Documents\GitHub\HW1\HW2\from NER\model.py:60: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2019-04-11 17:33:09,783:WARNING: From C:\Users\User\Documents\GitHub\HW1\HW2\from NER\model.py:60: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+2019-04-11 17:33:09,783:WARNING: From C:\Users\User\Documents\GitHub\HW1\HW2\from NER\model.py:64: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+2019-04-11 17:33:09,783:WARNING: From C:\Users\User\Documents\GitHub\HW1\HW2\from NER\model.py:64: LSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+2019-04-11 17:33:09,798:WARNING: From C:\Users\User\Documents\GitHub\HW1\HW2\from NER\model.py:71: bidirectional_dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell))`, which is equivalent to this API
+2019-04-11 17:33:09,798:WARNING: From C:\Users\User\Documents\GitHub\HW1\HW2\from NER\model.py:71: bidirectional_dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell))`, which is equivalent to this API
+2019-04-11 17:33:09,798:WARNING: From C:\Users\User\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow\python\ops\rnn.py:443: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+2019-04-11 17:33:09,798:WARNING: From C:\Users\User\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow\python\ops\rnn.py:443: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+2019-04-11 17:33:09,798:WARNING: From C:\Users\User\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow\python\ops\rnn.py:626: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-04-11 17:33:09,798:WARNING: From C:\Users\User\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow\python\ops\rnn.py:626: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2019-04-11 17:33:21,128:INFO: 2019-04-11 17:33:12 epoch 1, step 1, loss: 241.1, global_step: 1
+2019-04-11 17:33:21,128:INFO: 2019-04-11 17:33:12 epoch 1, step 1, loss: 241.1, global_step: 1
+2019-04-11 17:44:32,295:INFO: 2019-04-11 17:33:12 epoch 1, step 71, loss: 15.87, global_step: 71
+2019-04-11 17:44:32,295:INFO: 2019-04-11 17:33:12 epoch 1, step 71, loss: 15.87, global_step: 71
+2019-04-11 17:44:34,014:INFO: ===========validation / test===========
+2019-04-11 17:44:34,014:INFO: ===========validation / test===========
+2019-04-11 17:45:58,255:INFO: processed 266954 tokens with 19537 phrases; found: 19593 phrases; correct: 14945.
+2019-04-11 17:45:58,255:INFO: processed 266954 tokens with 19537 phrases; found: 19593 phrases; correct: 14945.
+2019-04-11 17:45:58,255:INFO: accuracy:  96.77%; precision:  76.28%; recall:  76.50%; FB1:  76.39
+2019-04-11 17:45:58,255:INFO: accuracy:  96.77%; precision:  76.28%; recall:  76.50%; FB1:  76.39
+2019-04-11 17:45:58,255:INFO: LOC: precision:  55.95%; recall:  42.64%; FB1:  48.39  3462
+2019-04-11 17:45:58,255:INFO: LOC: precision:  55.95%; recall:  42.64%; FB1:  48.39  3462
+2019-04-11 17:45:58,255:INFO: STY: precision:  76.63%; recall:  91.71%; FB1:  83.49  5412
+2019-04-11 17:45:58,255:INFO: STY: precision:  76.63%; recall:  91.71%; FB1:  83.49  5412
+2019-04-11 17:45:58,270:INFO: TYP: precision:  82.67%; recall:  84.62%; FB1:  83.63  10719
+2019-04-11 17:45:58,270:INFO: TYP: precision:  82.67%; recall:  84.62%; FB1:  83.63  10719
+2019-04-11 17:46:05,668:INFO: 2019-04-11 17:45:58 epoch 2, step 1, loss: 15.45, global_step: 72
+2019-04-11 17:46:05,668:INFO: 2019-04-11 17:45:58 epoch 2, step 1, loss: 15.45, global_step: 72
+2019-04-11 17:58:30,970:INFO: 2019-04-11 17:45:58 epoch 2, step 71, loss: 1.947, global_step: 142
+2019-04-11 17:58:30,970:INFO: 2019-04-11 17:45:58 epoch 2, step 71, loss: 1.947, global_step: 142
+2019-04-11 17:58:31,856:INFO: ===========validation / test===========
+2019-04-11 17:58:31,856:INFO: ===========validation / test===========
+2019-04-11 17:59:55,137:INFO: processed 266954 tokens with 19537 phrases; found: 19988 phrases; correct: 18972.
+2019-04-11 17:59:55,137:INFO: processed 266954 tokens with 19537 phrases; found: 19988 phrases; correct: 18972.
+2019-04-11 17:59:55,137:INFO: accuracy:  99.36%; precision:  94.92%; recall:  97.11%; FB1:  96.00
+2019-04-11 17:59:55,137:INFO: accuracy:  99.36%; precision:  94.92%; recall:  97.11%; FB1:  96.00
+2019-04-11 17:59:55,153:INFO: LOC: precision:  90.72%; recall:  91.90%; FB1:  91.31  4602
+2019-04-11 17:59:55,153:INFO: LOC: precision:  90.72%; recall:  91.90%; FB1:  91.31  4602
+2019-04-11 17:59:55,153:INFO: STY: precision:  96.11%; recall:  98.76%; FB1:  97.42  4647
+2019-04-11 17:59:55,153:INFO: STY: precision:  96.11%; recall:  98.76%; FB1:  97.42  4647
+2019-04-11 17:59:55,153:INFO: TYP: precision:  96.20%; recall:  98.65%; FB1:  97.41  10739
+2019-04-11 17:59:55,153:INFO: TYP: precision:  96.20%; recall:  98.65%; FB1:  97.41  10739
+2019-04-11 18:00:05,557:INFO: 2019-04-11 17:59:55 epoch 3, step 1, loss: 2.507, global_step: 143
+2019-04-11 18:00:05,557:INFO: 2019-04-11 17:59:55 epoch 3, step 1, loss: 2.507, global_step: 143
+2019-04-11 18:13:11,558:INFO: 2019-04-11 17:59:55 epoch 3, step 71, loss: 0.8853, global_step: 213
+2019-04-11 18:13:11,558:INFO: 2019-04-11 17:59:55 epoch 3, step 71, loss: 0.8853, global_step: 213
+2019-04-11 18:13:12,590:INFO: ===========validation / test===========
+2019-04-11 18:13:12,590:INFO: ===========validation / test===========
+2019-04-11 18:14:36,041:INFO: processed 266954 tokens with 19537 phrases; found: 19865 phrases; correct: 19363.
+2019-04-11 18:14:36,041:INFO: processed 266954 tokens with 19537 phrases; found: 19865 phrases; correct: 19363.
+2019-04-11 18:14:36,041:INFO: accuracy:  99.61%; precision:  97.47%; recall:  99.11%; FB1:  98.28
+2019-04-11 18:14:36,041:INFO: accuracy:  99.61%; precision:  97.47%; recall:  99.11%; FB1:  98.28
+2019-04-11 18:14:36,041:INFO: LOC: precision:  95.86%; recall:  97.95%; FB1:  96.90  4642
+2019-04-11 18:14:36,041:INFO: LOC: precision:  95.86%; recall:  97.95%; FB1:  96.90  4642
+2019-04-11 18:14:36,041:INFO: STY: precision:  97.11%; recall:  99.73%; FB1:  98.41  4644
+2019-04-11 18:14:36,041:INFO: STY: precision:  97.11%; recall:  99.73%; FB1:  98.41  4644
+2019-04-11 18:14:36,041:INFO: TYP: precision:  98.34%; recall:  99.34%; FB1:  98.84  10579
+2019-04-11 18:14:36,041:INFO: TYP: precision:  98.34%; recall:  99.34%; FB1:  98.84  10579
+2019-04-11 18:14:42,758:INFO: 2019-04-11 18:14:36 epoch 4, step 1, loss: 2.246, global_step: 214
+2019-04-11 18:14:42,758:INFO: 2019-04-11 18:14:36 epoch 4, step 1, loss: 2.246, global_step: 214
+2019-04-11 18:28:02,360:INFO: 2019-04-11 18:14:36 epoch 4, step 71, loss: 0.4457, global_step: 284
+2019-04-11 18:28:02,360:INFO: 2019-04-11 18:14:36 epoch 4, step 71, loss: 0.4457, global_step: 284
+2019-04-11 18:28:03,736:INFO: ===========validation / test===========
+2019-04-11 18:28:03,736:INFO: ===========validation / test===========
+2019-04-11 18:29:27,468:INFO: processed 266954 tokens with 19537 phrases; found: 19852 phrases; correct: 19451.
+2019-04-11 18:29:27,468:INFO: processed 266954 tokens with 19537 phrases; found: 19852 phrases; correct: 19451.
+2019-04-11 18:29:27,468:INFO: accuracy:  99.69%; precision:  97.98%; recall:  99.56%; FB1:  98.76
+2019-04-11 18:29:27,468:INFO: accuracy:  99.69%; precision:  97.98%; recall:  99.56%; FB1:  98.76
+2019-04-11 18:29:27,468:INFO: LOC: precision:  97.52%; recall:  98.70%; FB1:  98.11  4598
+2019-04-11 18:29:27,468:INFO: LOC: precision:  97.52%; recall:  98.70%; FB1:  98.11  4598
+2019-04-11 18:29:27,468:INFO: STY: precision:  97.45%; recall:  99.78%; FB1:  98.60  4630
+2019-04-11 18:29:27,468:INFO: STY: precision:  97.45%; recall:  99.78%; FB1:  98.60  4630
+2019-04-11 18:29:27,468:INFO: TYP: precision:  98.41%; recall:  99.84%; FB1:  99.12  10624
+2019-04-11 18:29:27,468:INFO: TYP: precision:  98.41%; recall:  99.84%; FB1:  99.12  10624
+2019-04-11 18:29:40,575:INFO: 2019-04-11 18:29:27 epoch 5, step 1, loss: 1.317, global_step: 285
+2019-04-11 18:29:40,575:INFO: 2019-04-11 18:29:27 epoch 5, step 1, loss: 1.317, global_step: 285
+2019-04-11 18:42:45,608:INFO: 2019-04-11 18:29:27 epoch 5, step 71, loss: 7.442, global_step: 355
+2019-04-11 18:42:45,608:INFO: 2019-04-11 18:29:27 epoch 5, step 71, loss: 7.442, global_step: 355
+2019-04-11 18:42:46,529:INFO: ===========validation / test===========
+2019-04-11 18:42:46,529:INFO: ===========validation / test===========
+2019-04-11 18:44:12,054:INFO: processed 266954 tokens with 19537 phrases; found: 19718 phrases; correct: 19419.
+2019-04-11 18:44:12,054:INFO: processed 266954 tokens with 19537 phrases; found: 19718 phrases; correct: 19419.
+2019-04-11 18:44:12,070:INFO: accuracy:  99.76%; precision:  98.48%; recall:  99.40%; FB1:  98.94
+2019-04-11 18:44:12,070:INFO: accuracy:  99.76%; precision:  98.48%; recall:  99.40%; FB1:  98.94
+2019-04-11 18:44:12,070:INFO: LOC: precision:  98.35%; recall:  98.57%; FB1:  98.46  4553
+2019-04-11 18:44:12,070:INFO: LOC: precision:  98.35%; recall:  98.57%; FB1:  98.46  4553
+2019-04-11 18:44:12,070:INFO: STY: precision:  98.51%; recall:  99.18%; FB1:  98.84  4553
+2019-04-11 18:44:12,070:INFO: STY: precision:  98.51%; recall:  99.18%; FB1:  98.84  4553
+2019-04-11 18:44:12,070:INFO: TYP: precision:  98.53%; recall:  99.85%; FB1:  99.18  10612
+2019-04-11 18:44:12,070:INFO: TYP: precision:  98.53%; recall:  99.85%; FB1:  99.18  10612
+2019-04-11 18:44:17,272:INFO: 2019-04-11 18:44:12 epoch 6, step 1, loss: 1.321, global_step: 356
+2019-04-11 18:44:17,272:INFO: 2019-04-11 18:44:12 epoch 6, step 1, loss: 1.321, global_step: 356
+2019-04-11 18:57:29,756:INFO: 2019-04-11 18:44:12 epoch 6, step 71, loss: 0.02808, global_step: 426
+2019-04-11 18:57:29,756:INFO: 2019-04-11 18:44:12 epoch 6, step 71, loss: 0.02808, global_step: 426
+2019-04-11 18:57:30,194:WARNING: From C:\Users\User\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow\python\training\saver.py:966: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+2019-04-11 18:57:30,194:WARNING: From C:\Users\User\AppData\Local\Programs\Python\Python37\lib\site-packages\tensorflow\python\training\saver.py:966: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+2019-04-11 18:57:30,460:INFO: ===========validation / test===========
+2019-04-11 18:57:30,460:INFO: ===========validation / test===========
+2019-04-11 18:58:55,244:INFO: processed 266954 tokens with 19537 phrases; found: 19786 phrases; correct: 19467.
+2019-04-11 18:58:55,244:INFO: processed 266954 tokens with 19537 phrases; found: 19786 phrases; correct: 19467.
+2019-04-11 18:58:55,244:INFO: accuracy:  99.76%; precision:  98.39%; recall:  99.64%; FB1:  99.01
+2019-04-11 18:58:55,244:INFO: accuracy:  99.76%; precision:  98.39%; recall:  99.64%; FB1:  99.01
+2019-04-11 18:58:55,244:INFO: LOC: precision:  98.04%; recall:  99.32%; FB1:  98.68  4602
+2019-04-11 18:58:55,244:INFO: LOC: precision:  98.04%; recall:  99.32%; FB1:  98.68  4602
+2019-04-11 18:58:55,244:INFO: STY: precision:  98.53%; recall:  99.45%; FB1:  98.99  4564
+2019-04-11 18:58:55,244:INFO: STY: precision:  98.53%; recall:  99.45%; FB1:  98.99  4564
+2019-04-11 18:58:55,244:INFO: TYP: precision:  98.47%; recall:  99.87%; FB1:  99.17  10620
+2019-04-11 18:58:55,244:INFO: TYP: precision:  98.47%; recall:  99.87%; FB1:  99.17  10620
+2019-04-11 18:59:01,368:INFO: 2019-04-11 18:58:55 epoch 7, step 1, loss: 1.199, global_step: 427
+2019-04-11 18:59:01,368:INFO: 2019-04-11 18:58:55 epoch 7, step 1, loss: 1.199, global_step: 427
+2019-04-11 19:14:02,059:INFO: 2019-04-11 18:58:55 epoch 7, step 71, loss: 0.002991, global_step: 497
+2019-04-11 19:14:02,059:INFO: 2019-04-11 18:58:55 epoch 7, step 71, loss: 0.002991, global_step: 497
+2019-04-11 19:14:07,463:INFO: ===========validation / test===========
+2019-04-11 19:14:07,463:INFO: ===========validation / test===========
+2019-04-11 19:15:40,753:INFO: processed 266954 tokens with 19537 phrases; found: 19664 phrases; correct: 19448.
+2019-04-11 19:15:40,753:INFO: processed 266954 tokens with 19537 phrases; found: 19664 phrases; correct: 19448.
+2019-04-11 19:15:40,753:INFO: accuracy:  99.81%; precision:  98.90%; recall:  99.54%; FB1:  99.22
+2019-04-11 19:15:40,753:INFO: accuracy:  99.81%; precision:  98.90%; recall:  99.54%; FB1:  99.22
+2019-04-11 19:15:40,753:INFO: LOC: precision:  98.80%; recall:  99.34%; FB1:  99.07  4568
+2019-04-11 19:15:40,753:INFO: LOC: precision:  98.80%; recall:  99.34%; FB1:  99.07  4568
+2019-04-11 19:15:40,769:INFO: STY: precision:  99.10%; recall:  99.45%; FB1:  99.27  4538
+2019-04-11 19:15:40,769:INFO: STY: precision:  99.10%; recall:  99.45%; FB1:  99.27  4538
+2019-04-11 19:15:40,769:INFO: TYP: precision:  98.86%; recall:  99.68%; FB1:  99.27  10558
+2019-04-11 19:15:40,769:INFO: TYP: precision:  98.86%; recall:  99.68%; FB1:  99.27  10558
+2019-04-11 19:15:55,921:INFO: 2019-04-11 19:15:40 epoch 8, step 1, loss: 0.7653, global_step: 498
+2019-04-11 19:15:55,921:INFO: 2019-04-11 19:15:40 epoch 8, step 1, loss: 0.7653, global_step: 498
+2019-04-11 19:31:11,700:INFO: 2019-04-11 19:15:40 epoch 8, step 71, loss: 0.01413, global_step: 568
+2019-04-11 19:31:11,700:INFO: 2019-04-11 19:15:40 epoch 8, step 71, loss: 0.01413, global_step: 568
+2019-04-11 19:31:12,897:INFO: ===========validation / test===========
+2019-04-11 19:31:12,897:INFO: ===========validation / test===========
+2019-04-11 19:32:51,566:INFO: processed 266954 tokens with 19537 phrases; found: 19693 phrases; correct: 19478.
+2019-04-11 19:32:51,566:INFO: processed 266954 tokens with 19537 phrases; found: 19693 phrases; correct: 19478.
+2019-04-11 19:32:51,566:INFO: accuracy:  99.84%; precision:  98.91%; recall:  99.70%; FB1:  99.30
+2019-04-11 19:32:51,566:INFO: accuracy:  99.84%; precision:  98.91%; recall:  99.70%; FB1:  99.30
+2019-04-11 19:32:51,566:INFO: LOC: precision:  98.71%; recall:  99.36%; FB1:  99.03  4573
+2019-04-11 19:32:51,566:INFO: LOC: precision:  98.71%; recall:  99.36%; FB1:  99.03  4573
+2019-04-11 19:32:51,566:INFO: STY: precision:  99.23%; recall:  99.69%; FB1:  99.46  4543
+2019-04-11 19:32:51,566:INFO: STY: precision:  99.23%; recall:  99.69%; FB1:  99.46  4543
+2019-04-11 19:32:51,566:INFO: TYP: precision:  98.86%; recall:  99.85%; FB1:  99.35  10577
+2019-04-11 19:32:51,566:INFO: TYP: precision:  98.86%; recall:  99.85%; FB1:  99.35  10577
+2019-04-11 19:33:02,137:INFO: 2019-04-11 19:32:51 epoch 9, step 1, loss: 0.618, global_step: 569
+2019-04-11 19:33:02,137:INFO: 2019-04-11 19:32:51 epoch 9, step 1, loss: 0.618, global_step: 569
+2019-04-11 19:48:37,088:INFO: 2019-04-11 19:32:51 epoch 9, step 71, loss: 0.02142, global_step: 639
+2019-04-11 19:48:37,088:INFO: 2019-04-11 19:32:51 epoch 9, step 71, loss: 0.02142, global_step: 639
+2019-04-11 19:48:37,972:INFO: ===========validation / test===========
+2019-04-11 19:48:37,972:INFO: ===========validation / test===========
+2019-04-11 19:50:19,976:INFO: processed 266954 tokens with 19537 phrases; found: 19665 phrases; correct: 19491.
+2019-04-11 19:50:19,976:INFO: processed 266954 tokens with 19537 phrases; found: 19665 phrases; correct: 19491.
+2019-04-11 19:50:19,976:INFO: accuracy:  99.86%; precision:  99.12%; recall:  99.76%; FB1:  99.44
+2019-04-11 19:50:19,976:INFO: accuracy:  99.86%; precision:  99.12%; recall:  99.76%; FB1:  99.44
+2019-04-11 19:50:19,977:INFO: LOC: precision:  99.12%; recall:  99.54%; FB1:  99.33  4562
+2019-04-11 19:50:19,977:INFO: LOC: precision:  99.12%; recall:  99.54%; FB1:  99.33  4562
+2019-04-11 19:50:19,979:INFO: STY: precision:  99.21%; recall:  99.93%; FB1:  99.57  4555
+2019-04-11 19:50:19,979:INFO: STY: precision:  99.21%; recall:  99.93%; FB1:  99.57  4555
+2019-04-11 19:50:19,979:INFO: TYP: precision:  99.07%; recall:  99.79%; FB1:  99.43  10548
+2019-04-11 19:50:19,979:INFO: TYP: precision:  99.07%; recall:  99.79%; FB1:  99.43  10548
+2019-04-11 19:50:32,501:INFO: 2019-04-11 19:50:20 epoch 10, step 1, loss: 0.5372, global_step: 640
+2019-04-11 19:50:32,501:INFO: 2019-04-11 19:50:20 epoch 10, step 1, loss: 0.5372, global_step: 640
+2019-04-11 20:06:23,888:INFO: 2019-04-11 19:50:20 epoch 10, step 71, loss: 0.09204, global_step: 710
+2019-04-11 20:06:23,888:INFO: 2019-04-11 19:50:20 epoch 10, step 71, loss: 0.09204, global_step: 710
+2019-04-11 20:06:24,786:INFO: ===========validation / test===========
+2019-04-11 20:06:24,786:INFO: ===========validation / test===========
+2019-04-11 20:08:05,116:INFO: processed 266954 tokens with 19537 phrases; found: 19616 phrases; correct: 19489.
+2019-04-11 20:08:05,116:INFO: processed 266954 tokens with 19537 phrases; found: 19616 phrases; correct: 19489.
+2019-04-11 20:08:05,116:INFO: accuracy:  99.90%; precision:  99.35%; recall:  99.75%; FB1:  99.55
+2019-04-11 20:08:05,116:INFO: accuracy:  99.90%; precision:  99.35%; recall:  99.75%; FB1:  99.55
+2019-04-11 20:08:05,116:INFO: LOC: precision:  99.32%; recall:  99.60%; FB1:  99.46  4556
+2019-04-11 20:08:05,116:INFO: LOC: precision:  99.32%; recall:  99.60%; FB1:  99.46  4556
+2019-04-11 20:08:05,116:INFO: STY: precision:  99.62%; recall:  99.65%; FB1:  99.64  4523
+2019-04-11 20:08:05,116:INFO: STY: precision:  99.62%; recall:  99.65%; FB1:  99.64  4523
+2019-04-11 20:08:05,116:INFO: TYP: precision:  99.25%; recall:  99.87%; FB1:  99.56  10537
+2019-04-11 20:08:05,116:INFO: TYP: precision:  99.25%; recall:  99.87%; FB1:  99.56  10537
