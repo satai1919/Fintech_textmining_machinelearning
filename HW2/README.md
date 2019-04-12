@@ -4,6 +4,4 @@
 
 1. TDM完成
 2. Co-occurance 完成
-
-
-to do: 共現圖
+3. 共現圖完成
