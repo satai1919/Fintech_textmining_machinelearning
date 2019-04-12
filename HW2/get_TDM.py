@@ -53,7 +53,7 @@ df = pd.concat(df_list).fillna(0)
 names=[ '句子'+str(i) for i in range(df.shape[0])]
 df.set_axis(names, axis='index', inplace=True)
 print(df)
-df.to_csv('TDM.csv', encoding = 'big5')
+df.to_csv('TDM.csv', encoding = 'utf-8')
 
 #
 cov=df.values
@@ -69,4 +69,4 @@ df2.set_axis(df2names, axis='index', inplace=True)
 # for i in range(df2.shape[0]):
     # df2.rename(columns={i:''+str(i)}, index={i:'句子'+str(i)}, inplace=True)
 print(df2)
-df2.to_csv('Co-occur.csv', encoding = 'big5')
+df2.to_csv('Co-occur.csv', encoding = 'utf-8')
