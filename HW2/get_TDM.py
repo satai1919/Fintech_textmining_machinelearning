@@ -59,7 +59,10 @@ df.to_csv('TDM.csv', encoding = 'big5')
 cov=df.values
 cov_T = np.transpose(cov)
 co_occurence =cov_T.dot(cov)
-df2=pd.DataFrame(co_occurence)
+df2names = list(df.columns.values)
+df2=pd.DataFrame(co_occurence, columns=df2names)
+df2.set_axis(df2names, axis='index', inplace=True)
+
 # for i in range(df2.shape[0]):
     # df2.rename(columns={i:''+str(i)}, index={i:'句子'+str(i)}, inplace=True)
 print(df2)
