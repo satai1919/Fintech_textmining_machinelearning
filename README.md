@@ -13,10 +13,9 @@
 
 ## HW 2
 
-4/10 by d768092:
-新增使用jieba套件取詞的code和得出的單詞data(tf_idf2)\
-新增手動標記單詞(set_type.py)，要自行標記約600個單詞的種類，可以直接改wordtype.csv或玩一下我那個程式(?)\
-註:我沒有標記完，只有試一下確定程式能跑，如果覺得jieba有些分詞怪怪的也可以直接改wordtype.csv\
-新增標記程式(label.py)，以wordtype中單詞的種類做標記，沒有用jieba分詞，所以改wordtype.csv的單詞還是能正確執行\
-註:無法保證全部都有標到(ex.出現太少次的國家)，或是一個詞有兩個意思(理論上我們的資料不太會有一個詞是兩種不同種類吧)\
-以上皆用python3執行
+利用NER，抓基金投資方式說明的關鍵字。
+
+1. TDM完成 （TDM.csv）
+2. Co-occurance 完成 (Co-occur.csv)
+3. 共現圖完成 (共現圖.png)
+
