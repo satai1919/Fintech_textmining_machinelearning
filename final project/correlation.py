@@ -1,5 +1,5 @@
 #假設是dataframe的狀態
-import nunpy as np
+import numpy as np
 from scipy.stats.stats import pearsonr, spearmanr
 
 def person_corr(fundlist, a, b, period=100):
