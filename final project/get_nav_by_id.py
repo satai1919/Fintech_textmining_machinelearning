@@ -30,6 +30,8 @@ for id in id_list:
 	
 	try:
 		tem_df = pd.read_csv(price_url).iloc[:,0:2]
+		if tem_df.shape[0] < 2:
+			continue
 		tem_df.columns = ['date', id]
 		tem_df.set_index('date', inplace = True)
 		df_list.append(tem_df)
