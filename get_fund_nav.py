@@ -35,7 +35,7 @@ first_id = 	funds_id[0]
 count = 1
 
 print( first_id, '處理df，第%i/%i個基金' %(count, len(funds_id)))
-price_url = 'https://tw.money.yahoo.com/fund/download/' + first_id + '?startDate=2018-03-01&endDate=2019-04-21'
+price_url = 'https://tw.money.yahoo.com/fund/download/' + first_id + '?startDate=2017-05-10&endDate=2019-05-10'
 df = pd.read_csv(price_url).iloc[:,0:2]
 df.columns = ['date', first_id]
 	
@@ -43,7 +43,7 @@ df.columns = ['date', first_id]
 for id in funds_id[1:]:
 	count+=1
 	print(id, '處理df，第%i/%i個基金' %(count, len(funds_id)))
-	price_url = 'https://tw.money.yahoo.com/fund/download/' + id + '?startDate=2018-03-01&endDate=2019-04-21'
+	price_url = 'https://tw.money.yahoo.com/fund/download/' + id + '?startDate=2017-05-10&endDate=2019-05-10'
 	
 	try:
 		tem_df = pd.read_csv(price_url).iloc[:,0:2]
