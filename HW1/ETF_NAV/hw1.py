@@ -1,44 +1,3 @@
-import csv
-from datetime import datetime
-
-start_date = datetime.strptime( "2016/01/01" , "%Y/%m/%d")
-
-out_file =  open( 'ETF List Filtered.csv', 'w',newline='')
-in_file1 = open( '..\data\Currency ETF List (36).csv', 'r') 
-in_file2 = open( '..\data\Preferred Stock ETF List (12).csv', 'r')
-
-
-
-
-
-csv_reader = csv.DictReader(in_file1)
-csv_writer = csv.writer(out_file)
-csv_writer.writerow(['Symbol', 'ETF Name', 'Inception','Type']) #先寫出行名稱
-
-for a_row in csv_reader: #對每一列，進行Dictionary-like的讀取
-    symbol = a_row['Symbol']
-    etf_name = a_row['ETF Name']
-    inception = datetime.strptime( a_row['Inception'], "%Y/%m/%d") 
-#寫入
-    if inception  <= start_date:
-        csv_writer.writerow([symbol, etf_name, inception.date(), 'Currency']) #寫出四行，分別是代號、名稱、創立時間、跟基金類型
-
-
-csv_reader2 = csv.DictReader(in_file2)
-for a_row in csv_reader2:
-    symbol = a_row['Symbol']
-    etf_name = a_row['ETF Name']
-    inception = datetime.strptime( a_row['Inception'], "%Y/%m/%d")
-#寫入
-    if inception  <= start_date:
-        csv_writer.writerow([symbol, etf_name, inception.date(), 'Prefered Stock'])
-		
-
-
-out_file.close()
-in_file1.close()
-in_file2.close()
-
 
 ######## selenium
 from selenium import webdriver
@@ -70,7 +29,7 @@ csv_reader = csv.DictReader(in_file)
 
 
 ## 確保資料夾位置
-location = input('You have to first change your download path to a new folder without any other files existing, and enter the path:')
+location = r'C:\Users\User\Desktop\新增資料夾\fund'
 
 import pandas as pd
 import time
@@ -105,7 +64,7 @@ for a_row in csv_reader:
         driver.get('https://us.spdrs.com/site-content/xls/PSK_HistoricalNav.xls?fund=' + symbol)
         
     else:#其他基金公司 必須從yahoo來爬取
-        url = 'https://finance.yahoo.com/quote/' + symbol + "/history?period1=1448899200&period2=1546272000&interval=1d&filter=history&frequency=1d"
+        url = 'https://finance.yahoo.com/quote/' + symbol + "/history?period1=1448899200&period2=1557469791&interval=1d&filter=history&frequency=1d"
         driver.get(url)
         time.sleep(2)
         wait.until(EC.presence_of_element_located((By.XPATH, "(.//*[normalize-space(text()) and normalize-space(.)='Currency in USD'])[1]/following::span[2]")))
