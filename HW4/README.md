@@ -4,5 +4,11 @@
 2. output.csv：是hw4.py的output
 3. HW4.ipynb：是作業的正式內容
 
+## 討論
+根據HW4.ipynb，
+1. Correlation
 
-
+2. 三種指標所評出的排序結果並不相似。
+若用rank correlation評比評價的相似程度，則在周資料中，最相近的兩個評比指標為ASKSR以及riskiness，相關係數為-0.04；相差最遠的是ASKSR與omega，相關係數為-0.48。
+以同樣的方式檢驗月資料中指標評價的相似程度，最相近的兩個評比指標為ASKSR和omega，相關係數為0.07；相差最遠的是ASKSR與riskiness，相關係數為-0.19。
+雖然在周、月資料中分辨出最相似的指標，但可以發現其實他們之間的相關係數都很低。
