@@ -11,9 +11,17 @@
 
 |前三名/指標 | ASKSR | omega | Riskiness|  
 |:----------- | :-----------:  | :-----------: | :-----------:|  
-|1               | FXE          | URR | FXA|  
+|1   | FXE  | URR | FXA|  
 |2 | ULE | DRR | USDU|  
 |3 | EUFX | YCL | CROC|
+
+月資料
+
+|前三名/指標 | ASKSR | omega | Riskiness|  
+|:----------- | :-----------:  | :-----------: | :-----------:|  
+|1  | SPFF  | CROC | USDU|  
+|2 | CYB | DRR | FXE|  
+|3 | PSK | IPFF | EUO|
 
 2. Correlation ranking of cross展示了三種指標在周月資料之間的相似程度。   
 可以發現omega是相似程度最高的一個指標，相關係數落在0.73；最不像的則是ASKSR，相關係數只有-0.14。
