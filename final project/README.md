@@ -19,3 +19,6 @@ row 3 為 最後一個有效NAV (不是np.nan)
 換周或換月份時，替換row1, row2, 並且計算報酬率，append到資料庫中   
 
 
+##新增檔案
+無風險利率歷史資料excel檔
+自動更新無風險利率網址：https://www.cbc.gov.tw/sp.asp?xdurl=banking/rates_04.asp&ctNode=371
