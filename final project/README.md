@@ -20,5 +20,14 @@ row 3 為 最後一個有效NAV (不是np.nan)
 
 
 ##新增檔案
-無風險利率歷史資料excel檔
-自動更新無風險利率網址：https://www.cbc.gov.tw/sp.asp?xdurl=banking/rates_04.asp&ctNode=371
+讀取資料庫的利率後，把無風險利率減去的檔案 substract_rf.py
+
+
+##目前已完成資料庫爬取及更新 (建議換周或換月份再跟新)
+
+
+## 代辦事項
+
+* 使用介面
+* 介面內根據使用者勾選基金名稱後計算三種 correlation
+
