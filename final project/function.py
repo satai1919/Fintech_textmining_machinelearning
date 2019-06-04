@@ -11,17 +11,10 @@ def downside_corr(a,b):
     corrba, _ = pearsonr(a[1:][j], b[1:][j])
     return (corrab+corrba)/2
 
-def recommend_funds(fund):
-    cor_list = []
-    id_list = []
-    mean_list = []
+def recommend_funds(picked_fund, picked_num):
     db = sqlite3.connect('data/fund.sqlite')
     cur = db.cursor()
-    cur.execute('select * from week')
-    r = cur.fetchall()
-    for i in range(len(r)):
-        id_list.append(r[i][0])
-
+    
     # get rf
     df_rf  = pd.read_csv('data/rf.csv')
     time_list = df_rf['y/m'].tolist()
@@ -38,29 +31,45 @@ def recommend_funds(fund):
     cur.execute('PRAGMA  table_info([week])')
     rf_array = []
     r = cur.fetchall()
+
     for i in range(1, len(r)):
         date = r[i][1][:-3]
         rf_array.append( time_to_rf[date]  )
     rf_array = np.array(rf_array)
+    
+    cur.execute('select * from week')
+    r = cur.fetchall()
+
+    id_list = []
+    for i in range(len(r)):
+        id_list.append(r[i][0])
+
+    picked_id = []
+    for fund_name in picked_fund:
+        picked_id.append(id_list.index(fund_name))
+    
+    picked_array = []
+    for p in picked_id:
+        picked_array.append(np.array(r[p][1:], dtype='float64'))
+    x = np.array(picked_array)
+    total_weight = sum(picked_num)
+    weight = np.array(picked_num).reshape(-1,1)
+
     fund_list = []
     mean_list = []
     cor1_list = []
     cor2_list = []
-    
-    cur.execute('select * from week')
-    r = cur.fetchall()
-    p = id_list.index(fund)
-    x = np.array(r[p][1:], dtype= 'float64').reshape(1,-1)
     for i in range(len(r)):
-        if i==p:
+        if i in picked_id:
             continue
         fund_list.append(r[i][0])
         y = np.array(r[i][1:], dtype= 'float64').reshape(1,-1)
         z = np.concatenate((x,y), axis=0).T
         rf_new = rf_array[~np.isnan(z).any(axis=1)]
         z_new = z[~np.isnan(z).any(axis=1)].T
-        x_new = z_new[0] - rf_new
-        y_new = z_new[1] - rf_new
+        x_new = z_new[:-1]*weight
+        x_new = x_new.sum(axis=0)/total_weight - rf_new
+        y_new = z_new[-1] - rf_new
         y = y.reshape(-1,)
         y = y[~np.isnan(y)]
         mean_list.append(y.mean()*4)
@@ -68,36 +77,35 @@ def recommend_funds(fund):
         cor1_list.append(cor1)
         cor2 = downside_corr(x_new, y_new)
         cor2_list.append(cor2)
-
-    #一般相關性:
-    cor1_list = np.array(cor1_list)
-    indices = cor1_list.argsort()[:6]
-    output1 = []
-    for i in indices[0:3]: 
-        output1.append( (mean_list[i], 'A+', id_list[i]) )
-    for i in indices[3:]: 
-        output1.append( (mean_list[i], 'A', id_list[i]) )
-
-    output1.sort(reverse = True)
-    '''
-    print('{0:<3s} {1:<12s} {2:<5s} {3:<6s}'.format('排名','基金ID','平均獲利','分散風險程度'))
-    for rank, (mean, degree, fund_id) in enumerate(output):
-        print('{0:<5d} {1:<14s} {2:<.6f} {3:<6s}'.format(rank+1,fund_id,mean,degree))
-    '''
         
+    #一般相關性
+    cor1_list = np.array(cor1_list)
+    indices = cor1_list.argsort()[:10]
+    info_list = []
+    for i in indices: 
+        info_list.append( (cor1_list[i], mean_list[i], id_list[i]) )
+
+    info_list.sort()
+    output1 = []
+    max_value = -1
+    for info in info_list:
+        if info[1] > max_value:
+            max_value = info[1]
+            output1.append( (info[2], info[1]) )
+
     #下跌相關性
     cor2_list = np.array(cor2_list)
-    indices = cor2_list.argsort()[:6]
-    output2 = []
-    for i in indices[0:3]: 
-        output2.append( (mean_list[i], 'A+', id_list[i]) )
-    for i in indices[3:]: 
-        output2.append( (mean_list[i], 'A', id_list[i]) )
+    indices = cor2_list.argsort()[:10]
+    info_list = []
+    for i in indices: 
+        info_list.append( (cor2_list[i], mean_list[i], id_list[i]) )
 
-    output2.sort(reverse = True)
-    '''
-    print('{0:<3s} {1:<12s} {2:<5s} {3:<6s}'.format('排名','基金ID','平均獲利','分散風險程度'))
-    for rank, (mean, degree, fund_id) in enumerate(output):
-        print('{0:<5d} {1:<14s} {2:<.6f} {3:<6s}'.format(rank+1,fund_id,mean,degree))
-    '''
-    return output1,output2
+    info_list.sort()
+    output2 = []
+    max_value = -1
+    for info in info_list:
+        if info[1] > max_value:
+            max_value = info[1]
+            output2.append( (info[2], info[1]) )
+    
+    return output1, output2
