@@ -78,7 +78,7 @@ with sqlite3.connect('fund.sqlite') as db:
 
     #取出資料庫上次日期即今日日期
     column_name =  df_price_holder.columns
-    start = column_name[2] #'2019-05-09'格式
+    start = column_name[1] #'2019-05-09'格式
     start_datetime = datetime.strptime(start, '%Y-%m-%d').date()
     end_datetime = (datetime.now() + timedelta(days = -1)).date()
     end = end_datetime.strftime('%Y-%m-%d') #爬到昨天為止
@@ -106,7 +106,7 @@ count = 0
 
 
 data_week = {}
-
+index_list = []
 for i in range(lenth):
     error = False
     id = id_list[i]
@@ -145,7 +145,12 @@ for i in range(lenth):
         
         data_week[id] = week_ret_list
         last_week_list[i] = last_week_last_price
-
+        if len(week_index_list) == len(index_list) and week_index_list!=index_list : #確保是星期一
+            for i in range(len(week_index_list)):
+                if week_index_list[i]< index_list[i]:
+                    index_list[i] = week_index_list[i]
+        elif len(week_index_list) > len(index_list):
+            index_list = week_index_list
     last_price_list[i] = this_week_last_price
     
 # update the price_holder dataframe
@@ -154,14 +159,14 @@ if is_new_week:
     for key, value in zip( list(data_week.keys()), list(data_week.values()) ) :
         if len(value) == 0:
             del data_week[key]
-    to_appended_df = pd.DataFrame(data = data_week, index = week_index_list)
+    to_appended_df = pd.DataFrame(data = data_week, index = index_list)
     df_week = df_week.append(to_appended_df)
 
 
 #update last price column
 df_price_holder[start] = np.array(last_price_list)
 column_name = list(column_name)
-column_name[2] = end
+column_name[1] = end
 df_price_holder.columns = column_name
 
 # save to sql
