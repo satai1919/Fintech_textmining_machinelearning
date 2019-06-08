@@ -3,6 +3,7 @@ import pandas as pd
 from scipy.stats.stats import pearsonr
 from datetime import datetime
 import numpy as np
+import id_to_name
 
 def downside_corr(a,b):
     i = a[1:]<a[:-1]
@@ -91,7 +92,8 @@ def recommend_funds(picked_fund, picked_num):
     for info in info_list:
         if info[1] > max_value:
             max_value = info[1]
-            output1.append( (info[2], info[1]) )
+            name = id_to_name.search(info[2])
+            output1.append( (name, info[1]) )
 
     #下跌相關性
     cor2_list = np.array(cor2_list)
@@ -106,6 +108,7 @@ def recommend_funds(picked_fund, picked_num):
     for info in info_list:
         if info[1] > max_value:
             max_value = info[1]
-            output2.append( (info[2], info[1]) )
+            name = id_to_name.search(info[2])
+            output2.append( (name, info[1]) )
     
     return output1, output2
