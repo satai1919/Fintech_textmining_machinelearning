@@ -22,7 +22,7 @@ lna = []
 for i in l:
     i = i.split(",")
     lid.append(i[0])
-    lna.append(i[1])
+    lna.append(i[1].rstrip())
     
 lid.pop(0)
 lna.pop(0)
@@ -44,16 +44,28 @@ while k < len(lid):
     
 import pandas as pd
 
+
 '''
-#處理一些格式的問題
-
-name.append(["普信"])
-
-for i in range(119):
-    name[37].append([lid.pop(0),lna.pop(0)])
-
-name[65][0] = "GAM"
+for id to name
 '''
+idna = list(zip(lid, lna))
+idna.sort()
+idname = pd.DataFrame(idna, columns=["id","name"])
+idname.to_pickle('name_id')
+
+'''
+for name to id
+'''
+#'''
+##處理一些格式的問題
+#
+#name.append(["普信"])
+#
+#for i in range(119):
+#    name[37].append([lid.pop(0),lna.pop(0)])
+#
+#name[65][0] = "GAM"
+#'''
 name1 = pd.DataFrame(name)
 name = name1.transpose()
 name.columns = name.iloc[0]
