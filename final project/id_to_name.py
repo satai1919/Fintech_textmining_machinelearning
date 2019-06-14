@@ -1,9 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import pickle
+from pickle import load
+import os, sys
 
-with open('data/name_id', 'rb') as f:
-    data = pickle.load(f)
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+
+with open(resource_path('name_id'), 'rb') as f:
+    data = load(f)
 
 def binarySearch(arr, l, r, x): 
     while l <= r: 

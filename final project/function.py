@@ -1,9 +1,21 @@
 import sqlite3
-import pandas as pd
+#import pandas as pd
+from pandas import read_csv
 from scipy.stats.stats import pearsonr
-from datetime import datetime
 import numpy as np
 import id_to_name
+import os, sys
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 
 def downside_corr(a,b):
     i = a[1:]<a[:-1]
@@ -12,12 +24,12 @@ def downside_corr(a,b):
     corrba, _ = pearsonr(a[1:][j], b[1:][j])
     return (corrab+corrba)/2
 
-def recommend_funds(picked_fund, picked_num):
-    db = sqlite3.connect('data/fund.sqlite')
+def recommend_funds(picked_fund, picked_num, term):
+    db = sqlite3.connect(resource_path('fund.sqlite'))
     cur = db.cursor()
     
     # get rf
-    df_rf  = pd.read_csv('data/rf.csv')
+    df_rf  = read_csv(resource_path('rf.csv'))
     time_list = df_rf['y/m'].tolist()
     rf_list = [float(x)/5200 for x in df_rf['rf'].tolist()]
 
@@ -79,36 +91,37 @@ def recommend_funds(picked_fund, picked_num):
         cor2 = downside_corr(x_new, y_new)
         cor2_list.append(cor2)
         
-    #一般相關性
-    cor1_list = np.array(cor1_list)
-    indices = cor1_list.argsort()[:10]
-    info_list = []
-    for i in indices: 
-        info_list.append( (cor1_list[i], mean_list[i], id_list[i]) )
-
-    info_list.sort()
-    output1 = []
-    max_value = -1
-    for info in info_list:
-        if info[1] > max_value:
-            max_value = info[1]
-            name = id_to_name.search(info[2])
-            output1.append( (name, info[1]) )
-
-    #下跌相關性
-    cor2_list = np.array(cor2_list)
-    indices = cor2_list.argsort()[:10]
-    info_list = []
-    for i in indices: 
-        info_list.append( (cor2_list[i], mean_list[i], id_list[i]) )
-
-    info_list.sort()
-    output2 = []
-    max_value = -1
-    for info in info_list:
-        if info[1] > max_value:
-            max_value = info[1]
-            name = id_to_name.search(info[2])
-            output2.append( (name, info[1]) )
+    if term == "long_term":
+        #一般相關性
+        cor1_list = np.array(cor1_list)
+        indices = cor1_list.argsort()[:10]
+        info_list = []
+        for i in indices: 
+            info_list.append( (cor1_list[i], mean_list[i], id_list[i]) )
     
-    return output1, output2
+        info_list.sort()
+        output1 = []
+        max_value = -1
+        for info in info_list:
+            if info[1] > max_value:
+                max_value = info[1]
+                name = id_to_name.search(info[2])
+                output1.append( (name, info[1]) )
+        return output1
+    else:
+        #下跌相關性
+        cor2_list = np.array(cor2_list)
+        indices = cor2_list.argsort()[:10]
+        info_list = []
+        for i in indices: 
+            info_list.append( (cor2_list[i], mean_list[i], id_list[i]) )
+    
+        info_list.sort()
+        output2 = []
+        max_value = -1
+        for info in info_list:
+            if info[1] > max_value:
+                max_value = info[1]
+                name = id_to_name.search(info[2])
+                output2.append( (name, info[1]) )
+        return output2
